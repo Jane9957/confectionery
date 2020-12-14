@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="confectionery/Hibernate">
+  <database-model serializer="dbm" dbms="MSSQL" family-id="MSSQL" format-version="4.19">
+    <root id="1">
+      <ServerVersion>15.0.2000</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="confectionery_">
+      <ObjectId>5</ObjectId>
+      <Current>1</Current>
+      <Collation>Cyrillic_General_CI_AS</Collation>
+      <Fingerprint>5.44172/5F41D957-DCCC-4B64-B1C2-4B19AD26C937@MURMUR\SQLEXPRESS</Fingerprint>
+    </database>
+    <database id="3" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+      <Collation>Cyrillic_General_CI_AS</Collation>
+    </database>
+    <database id="4" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+      <Collation>Cyrillic_General_CI_AS</Collation>
+    </database>
+    <database id="5" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+      <Collation>Cyrillic_General_CI_AS</Collation>
+    </database>
+    <database id="6" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+      <Collation>Cyrillic_General_CI_AS</Collation>
+    </database>
+    <schema id="7" parent="2" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="9" parent="2" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="10" parent="2" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="11" parent="2" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="13" parent="2" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="16" parent="2" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="17" parent="2" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2020-12-12.03:21:53.120</IntrospectionTimestamp>
+      <Current>1</Current>
+      <DescriptionsCheckSum>8583737289</DescriptionsCheckSum>
+    </schema>
+    <schema id="18" parent="2" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="19" parent="2" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <table id="20" parent="17" name="company">
+      <ObjectId>613577224</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:07:00.043</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:23:34.763</ModifiedTimestamp>
+    </table>
+    <table id="21" parent="17" name="company_type">
+      <ObjectId>837578022</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:21:38.773</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:23:34.760</ModifiedTimestamp>
+    </table>
+    <table id="22" parent="17" name="log">
+      <ObjectId>885578193</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:25:23.770</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:30:16.210</ModifiedTimestamp>
+    </table>
+    <table id="23" parent="17" name="log_type">
+      <ObjectId>917578307</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:26:18.537</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:28:43.970</ModifiedTimestamp>
+    </table>
+    <table id="24" parent="17" name="ord_prod">
+      <ObjectId>981578535</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:33:03.540</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:35.847</ModifiedTimestamp>
+    </table>
+    <table id="25" parent="17" name="ord_raw">
+      <ObjectId>1173579219</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:38:58.860</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:36.510</ModifiedTimestamp>
+    </table>
+    <table id="26" parent="17" name="order_customer">
+      <ObjectId>1013578649</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:34:08.780</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:35.843</ModifiedTimestamp>
+    </table>
+    <table id="27" parent="17" name="order_factory">
+      <ObjectId>1109578991</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:37:30.813</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:36.500</ModifiedTimestamp>
+    </table>
+    <table id="28" parent="17" name="production">
+      <ObjectId>1045578763</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:35:08.143</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:35.843</ModifiedTimestamp>
+    </table>
+    <table id="29" parent="17" name="raw">
+      <ObjectId>1141579105</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:38:14.670</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:36.507</ModifiedTimestamp>
+    </table>
+    <table id="30" parent="17" name="recipe">
+      <ObjectId>1077578877</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:36:28.920</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:34.790</ModifiedTimestamp>
+    </table>
+    <table id="31" parent="17" name="sysdiagrams">
+      <ObjectId>661577395</ObjectId>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <CreatedTimestamp>2020-12-09.14:15:05.507</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:15:05.507</ModifiedTimestamp>
+    </table>
+    <table id="32" parent="17" name="user">
+      <ObjectId>581577110</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:03:48.520</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:36.187</ModifiedTimestamp>
+    </table>
+    <routine id="33" parent="17" name="fn_diagramobjects">
+      <ObjectId>805577908</ObjectId>
+      <SourceTextLength>1647</SourceTextLength>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <CreatedTimestamp>2020-12-09.14:15:05.760</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:15:05.760</ModifiedTimestamp>
+      <RoutineType>scalar-fun</RoutineType>
+    </routine>
+    <routine id="34" parent="17" name="sp_alterdiagram">
+      <ObjectId>773577794</ObjectId>
+      <SourceTextLength>1501</SourceTextLength>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <CreatedTimestamp>2020-12-09.14:15:05.720</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:15:05.720</ModifiedTimestamp>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="35" parent="17" name="sp_creatediagram">
+      <ObjectId>741577680</ObjectId>
+      <SourceTextLength>1223</SourceTextLength>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <CreatedTimestamp>2020-12-09.14:15:05.713</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:15:05.713</ModifiedTimestamp>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="36" parent="17" name="sp_dropdiagram">
+      <ObjectId>789577851</ObjectId>
+      <SourceTextLength>896</SourceTextLength>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <CreatedTimestamp>2020-12-09.14:15:05.740</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:15:05.740</ModifiedTimestamp>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="37" parent="17" name="sp_helpdiagramdefinition">
+      <ObjectId>725577623</ObjectId>
+      <SourceTextLength>921</SourceTextLength>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <CreatedTimestamp>2020-12-09.14:15:05.670</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:15:05.670</ModifiedTimestamp>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="38" parent="17" name="sp_helpdiagrams">
+      <ObjectId>709577566</ObjectId>
+      <SourceTextLength>658</SourceTextLength>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <CreatedTimestamp>2020-12-09.14:15:05.637</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:15:05.637</ModifiedTimestamp>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="39" parent="17" name="sp_renamediagram">
+      <ObjectId>757577737</ObjectId>
+      <SourceTextLength>1721</SourceTextLength>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <CreatedTimestamp>2020-12-09.14:15:05.717</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:15:05.717</ModifiedTimestamp>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <routine id="40" parent="17" name="sp_upgraddiagrams">
+      <ObjectId>645577338</ObjectId>
+      <SourceTextLength>1463</SourceTextLength>
+      <ExtendedProperties>microsoft_database_tools_support
+1
+int</ExtendedProperties>
+      <CreatedTimestamp>2020-12-09.14:15:05.437</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:15:05.437</ModifiedTimestamp>
+      <RoutineType>proc</RoutineType>
+    </routine>
+    <column id="41" parent="20" name="id_company">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="20" name="address">
+      <Position>2</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="20" name="phone">
+      <Position>3</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="20" name="name">
+      <Position>4</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="20" name="web">
+      <Position>5</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="20" name="id_type">
+      <Position>6</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="47" parent="20" name="PK_company">
+      <Position>1</Position>
+      <ColNames>id_company</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="48" parent="20" name="PK_company">
+      <ObjectId>629577281</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:07:00.227</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:07:00.227</ModifiedTimestamp>
+      <ColNames>id_company</ColNames>
+      <UnderlyingIndexName>PK_company</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="49" parent="20" name="FK_company_company_type">
+      <ObjectId>869578136</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:23:34.760</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:23:34.760</ModifiedTimestamp>
+      <ColNames>id_type</ColNames>
+      <RefTableId>837578022</RefTableId>
+      <RefTableName>company_type</RefTableName>
+      <RefKeyName>PK_company_type</RefKeyName>
+      <RefColNames>id_type</RefColNames>
+    </foreign-key>
+    <column id="50" parent="21" name="id_type">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="21" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="52" parent="21" name="PK_company_type">
+      <Position>1</Position>
+      <ColNames>id_type</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="53" parent="21" name="PK_company_type">
+      <ObjectId>853578079</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:21:38.860</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:21:38.860</ModifiedTimestamp>
+      <ColNames>id_type</ColNames>
+      <UnderlyingIndexName>PK_company_type</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="54" parent="22" name="id_log">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="22" name="id_user">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="22" name="id_type">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="22" name="time">
+      <Position>4</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="58" parent="22" name="PK_log">
+      <Position>1</Position>
+      <ColNames>id_log</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="59" parent="22" name="PK_log">
+      <ObjectId>901578250</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:25:23.773</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:25:23.773</ModifiedTimestamp>
+      <ColNames>id_log</ColNames>
+      <UnderlyingIndexName>PK_log</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="60" parent="22" name="FK_log_user">
+      <ObjectId>965578478</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:30:16.207</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:30:16.207</ModifiedTimestamp>
+      <ColNames>id_user</ColNames>
+      <RefTableId>581577110</RefTableId>
+      <RefTableName>user</RefTableName>
+      <RefKeyName>PK_user</RefKeyName>
+      <RefColNames>id_user</RefColNames>
+    </foreign-key>
+    <foreign-key id="61" parent="22" name="FK_log_log_type">
+      <ObjectId>949578421</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:28:43.970</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:28:43.970</ModifiedTimestamp>
+      <ColNames>id_type</ColNames>
+      <RefTableId>917578307</RefTableId>
+      <RefTableName>log_type</RefTableName>
+      <RefKeyName>PK_log_type</RefKeyName>
+      <RefColNames>id_type</RefColNames>
+    </foreign-key>
+    <column id="62" parent="23" name="id_type">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="23" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="23" name="description">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="65" parent="23" name="PK_log_type">
+      <Position>1</Position>
+      <ColNames>id_type</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="66" parent="23" name="PK_log_type">
+      <ObjectId>933578364</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:26:18.600</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:26:18.600</ModifiedTimestamp>
+      <ColNames>id_type</ColNames>
+      <UnderlyingIndexName>PK_log_type</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="67" parent="24" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="24" name="id_sale">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="24" name="id_prod">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="24" name="qt_prod">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="71" parent="24" name="PK_ord_prod">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="72" parent="24" name="PK_ord_prod">
+      <ObjectId>997578592</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:33:03.540</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:33:03.540</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_ord_prod</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="73" parent="24" name="FK_ord_prod_order_customer">
+      <ObjectId>1253579504</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:58:35.840</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:35.840</ModifiedTimestamp>
+      <ColNames>id_sale</ColNames>
+      <RefTableId>1013578649</RefTableId>
+      <RefTableName>order_customer</RefTableName>
+      <RefKeyName>PK_order_customer</RefKeyName>
+      <RefColNames>id_sale</RefColNames>
+    </foreign-key>
+    <foreign-key id="74" parent="24" name="FK_ord_prod_production">
+      <ObjectId>1269579561</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:58:35.843</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:35.843</ModifiedTimestamp>
+      <ColNames>id_prod</ColNames>
+      <RefTableId>1045578763</RefTableId>
+      <RefTableName>production</RefTableName>
+      <RefKeyName>PK_production</RefKeyName>
+      <RefColNames>id_prod</RefColNames>
+    </foreign-key>
+    <column id="75" parent="25" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="25" name="id_supply">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="25" name="id_raw">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="25" name="qt_raw">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="79" parent="25" name="PK_ord_raw">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="80" parent="25" name="PK_ord_raw">
+      <ObjectId>1189579276</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:38:58.863</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:38:58.863</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_ord_raw</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="81" parent="25" name="FK_ord_raw_order_factory">
+      <ObjectId>1301579675</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:58:36.500</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:36.500</ModifiedTimestamp>
+      <ColNames>id_supply</ColNames>
+      <RefTableId>1109578991</RefTableId>
+      <RefTableName>order_factory</RefTableName>
+      <RefKeyName>PK_order_factory</RefKeyName>
+      <RefColNames>id_supply</RefColNames>
+    </foreign-key>
+    <foreign-key id="82" parent="25" name="FK_ord_raw_raw">
+      <ObjectId>1317579732</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:58:36.507</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:36.507</ModifiedTimestamp>
+      <ColNames>id_raw</ColNames>
+      <RefTableId>1141579105</RefTableId>
+      <RefTableName>raw</RefTableName>
+      <RefKeyName>PK_raw</RefKeyName>
+      <RefColNames>id_raw</RefColNames>
+    </foreign-key>
+    <column id="83" parent="26" name="id_sale">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="26" name="id_user">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="26" name="date">
+      <Position>3</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="26" name="price">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="87" parent="26" name="PK_order_customer">
+      <Position>1</Position>
+      <ColNames>id_sale</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="88" parent="26" name="PK_order_customer">
+      <ObjectId>1029578706</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:34:08.780</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:34:08.780</ModifiedTimestamp>
+      <ColNames>id_sale</ColNames>
+      <UnderlyingIndexName>PK_order_customer</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="89" parent="26" name="FK_order_customer_user">
+      <ObjectId>1237579447</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:58:35.477</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:35.477</ModifiedTimestamp>
+      <ColNames>id_user</ColNames>
+      <RefTableId>581577110</RefTableId>
+      <RefTableName>user</RefTableName>
+      <RefKeyName>PK_user</RefKeyName>
+      <RefColNames>id_user</RefColNames>
+    </foreign-key>
+    <column id="90" parent="27" name="id_supply">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="27" name="id_user">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="27" name="date">
+      <Position>3</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="93" parent="27" name="price">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="94" parent="27" name="PK_order_factory">
+      <Position>1</Position>
+      <ColNames>id_supply</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="95" parent="27" name="PK_order_factory">
+      <ObjectId>1125579048</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:37:30.813</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:37:30.813</ModifiedTimestamp>
+      <ColNames>id_supply</ColNames>
+      <UnderlyingIndexName>PK_order_factory</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="96" parent="27" name="FK_order_factory_user">
+      <ObjectId>1285579618</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:58:36.187</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:36.187</ModifiedTimestamp>
+      <ColNames>id_user</ColNames>
+      <RefTableId>581577110</RefTableId>
+      <RefTableName>user</RefTableName>
+      <RefKeyName>PK_user</RefKeyName>
+      <RefColNames>id_user</RefColNames>
+    </foreign-key>
+    <column id="97" parent="28" name="id_prod">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="98" parent="28" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="99" parent="28" name="price">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="100" parent="28" name="weight">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="101" parent="28" name="PK_production">
+      <Position>1</Position>
+      <ColNames>id_prod</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="102" parent="28" name="PK_production">
+      <ObjectId>1061578820</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:35:08.147</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:35:08.147</ModifiedTimestamp>
+      <ColNames>id_prod</ColNames>
+      <UnderlyingIndexName>PK_production</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="103" parent="29" name="id_raw">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="104" parent="29" name="name">
+      <Position>2</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="105" parent="29" name="price">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="106" parent="29" name="weight">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="107" parent="29" name="PK_raw">
+      <Position>1</Position>
+      <ColNames>id_raw</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="108" parent="29" name="PK_raw">
+      <ObjectId>1157579162</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:38:14.673</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:38:14.673</ModifiedTimestamp>
+      <ColNames>id_raw</ColNames>
+      <UnderlyingIndexName>PK_raw</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="109" parent="30" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="110" parent="30" name="id_prod">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="111" parent="30" name="id_raw">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="112" parent="30" name="qt_raw">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="113" parent="30" name="PK_recipe">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="114" parent="30" name="PK_recipe">
+      <ObjectId>1093578934</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:36:28.923</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:36:28.923</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_recipe</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="115" parent="30" name="FK_recipe_production">
+      <ObjectId>1205579333</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:58:34.780</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:34.780</ModifiedTimestamp>
+      <ColNames>id_prod</ColNames>
+      <RefTableId>1045578763</RefTableId>
+      <RefTableName>production</RefTableName>
+      <RefKeyName>PK_production</RefKeyName>
+      <RefColNames>id_prod</RefColNames>
+    </foreign-key>
+    <foreign-key id="116" parent="30" name="FK_recipe_raw">
+      <ObjectId>1221579390</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:58:34.787</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:58:34.787</ModifiedTimestamp>
+      <ColNames>id_raw</ColNames>
+      <RefTableId>1141579105</RefTableId>
+      <RefTableName>raw</RefTableName>
+      <RefKeyName>PK_raw</RefKeyName>
+      <RefColNames>id_raw</RefColNames>
+    </foreign-key>
+    <column id="117" parent="31" name="name">
+      <Position>1</Position>
+      <DataType>sysname|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="118" parent="31" name="principal_id">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="119" parent="31" name="diagram_id">
+      <Position>3</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="120" parent="31" name="version">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="121" parent="31" name="definition">
+      <Position>5</Position>
+      <DataType>varbinary(max)|0s</DataType>
+    </column>
+    <index id="122" parent="31" name="PK__sysdiagr__C2B05B61748A2245">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>diagram_id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="123" parent="31" name="UK_principal_name">
+      <Position>2</Position>
+      <ColNames>principal_id
+name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="124" parent="31" name="PK__sysdiagr__C2B05B61748A2245">
+      <ObjectId>677577452</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2020-12-09.14:15:05.540</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:15:05.540</ModifiedTimestamp>
+      <ColNames>diagram_id</ColNames>
+      <UnderlyingIndexName>PK__sysdiagr__C2B05B61748A2245</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="125" parent="31" name="UK_principal_name">
+      <ObjectId>693577509</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:15:05.540</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:15:05.540</ModifiedTimestamp>
+      <ColNames>principal_id
+name</ColNames>
+      <UnderlyingIndexName>UK_principal_name</UnderlyingIndexName>
+    </key>
+    <column id="126" parent="32" name="id_user">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="127" parent="32" name="login">
+      <Position>2</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="128" parent="32" name="password">
+      <Position>3</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="129" parent="32" name="email">
+      <Position>4</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="130" parent="32" name="phone">
+      <Position>5</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="131" parent="32" name="first_name">
+      <Position>6</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="132" parent="32" name="middle_name">
+      <Position>7</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="133" parent="32" name="last_name">
+      <Position>8</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="134" parent="32" name="birthday">
+      <Position>9</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="135" parent="32" name="id_company">
+      <Position>10</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="136" parent="32" name="PK_user">
+      <Position>1</Position>
+      <ColNames>id_user</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="137" parent="32" name="PK_user">
+      <ObjectId>597577167</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:03:48.650</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:03:48.650</ModifiedTimestamp>
+      <ColNames>id_user</ColNames>
+      <UnderlyingIndexName>PK_user</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="138" parent="32" name="FK_user_company1">
+      <ObjectId>821577965</ObjectId>
+      <CreatedTimestamp>2020-12-09.14:19:37.023</CreatedTimestamp>
+      <ModifiedTimestamp>2020-12-09.14:19:37.023</ModifiedTimestamp>
+      <ColNames>id_company</ColNames>
+      <RefTableId>613577224</RefTableId>
+      <RefTableName>company</RefTableName>
+      <RefKeyName>PK_company</RefKeyName>
+      <RefColNames>id_company</RefColNames>
+    </foreign-key>
+    <argument id="139" parent="33">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>int|0s</DataType>
+    </argument>
+    <argument id="140" parent="34" name="@diagramname">
+      <Position>1</Position>
+      <DataType>sysname|0s</DataType>
+    </argument>
+    <argument id="141" parent="34" name="@owner_id">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </argument>
+    <argument id="142" parent="34" name="@version">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+    </argument>
+    <argument id="143" parent="34" name="@definition">
+      <Position>4</Position>
+      <DataType>varbinary(max)|0s</DataType>
+    </argument>
+    <argument id="144" parent="35" name="@diagramname">
+      <Position>1</Position>
+      <DataType>sysname|0s</DataType>
+    </argument>
+    <argument id="145" parent="35" name="@owner_id">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </argument>
+    <argument id="146" parent="35" name="@version">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+    </argument>
+    <argument id="147" parent="35" name="@definition">
+      <Position>4</Position>
+      <DataType>varbinary(max)|0s</DataType>
+    </argument>
+    <argument id="148" parent="36" name="@diagramname">
+      <Position>1</Position>
+      <DataType>sysname|0s</DataType>
+    </argument>
+    <argument id="149" parent="36" name="@owner_id">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </argument>
+    <argument id="150" parent="37" name="@diagramname">
+      <Position>1</Position>
+      <DataType>sysname|0s</DataType>
+    </argument>
+    <argument id="151" parent="37" name="@owner_id">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </argument>
+    <argument id="152" parent="38" name="@diagramname">
+      <Position>1</Position>
+      <DataType>sysname|0s</DataType>
+    </argument>
+    <argument id="153" parent="38" name="@owner_id">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </argument>
+    <argument id="154" parent="39" name="@diagramname">
+      <Position>1</Position>
+      <DataType>sysname|0s</DataType>
+    </argument>
+    <argument id="155" parent="39" name="@owner_id">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </argument>
+    <argument id="156" parent="39" name="@new_diagramname">
+      <Position>3</Position>
+      <DataType>sysname|0s</DataType>
+    </argument>
+  </database-model>
+</dataSource>

@@ -1,9 +1,9 @@
-package services;
+package org.example.confectionery.services;
 
-import dataBase.DataBaseConnect;
+import org.example.confectionery.dataBase.DataBaseConnect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import services.entities.Profile;
+import org.example.confectionery.services.entities.Profile;
 
 @Service
 public class Customer {
@@ -15,7 +15,7 @@ public class Customer {
         Profile profile = new Profile();
 
         try {
-            profile = dataBaseConnect.main();
+            profile = dataBaseConnect.getProfile();
         } catch (Exception e) {
             e.printStackTrace();
         }

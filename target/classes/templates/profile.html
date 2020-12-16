@@ -12,11 +12,16 @@
         <tr><td>login: </td> <td><span th:text="${login}"> s</span></td></tr>
         <tr><td>password: </td> <td><span th:text="${password}"> s</span></td></tr>
 
-        <tr><td>name: </td> <td>smth</td></tr>
-        <tr><td>email: </td> <td>smth</td></tr>
-        <tr><td>phone: </td> <td>smth</td></tr>
-        <tr><td>birthday: </td> <td>smth</td></tr>
-        <tr><td>company: </td> <td>smth</td></tr>
+        <tr><td>name: </td> <td>
+            <span th:text="${name_first}"> s</span>
+            <span th:text="${name_middle}"> s</span>
+            <span th:text="${name_last}"> s</span>
+        </td></tr>
+
+        <tr><td>email: </td> <td><span th:text="${email}"> s</span></td></tr>
+        <tr><td>phone: </td> <td><span th:text="${phone}"> s</span></td></tr>
+        <tr><td>birthday: </td> <td><span th:text="${birthday}"> s</span></td></tr>
+        <tr><td>company: </td> <td>дописать</td></tr>
     </table>
 </div>
     <table title="Ordes">

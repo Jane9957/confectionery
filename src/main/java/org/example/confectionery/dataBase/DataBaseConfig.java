@@ -1,4 +1,4 @@
-package dataBase;
+package org.example.confectionery.dataBase;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,7 +17,7 @@ public class DataBaseConfig {
     @Bean(name = "src")
     public DriverManagerDataSource src() {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
-        driverManagerDataSource.setDriverClassName("com.microsoft.sqlserver");
+        driverManagerDataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         driverManagerDataSource.setUrl("jdbc:sqlserver://localhost:1433;databaseName=confectionery_");
         driverManagerDataSource.setUsername("user");
         driverManagerDataSource.setPassword("user");

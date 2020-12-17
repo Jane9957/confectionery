@@ -7,22 +7,26 @@
 <body>
 
 <div>information
+
     <table>
-        <tr><td>id: </td> <td><span th:text="${id}"> s</span></td></tr>
-        <tr><td>login: </td> <td><span th:text="${login}"> s</span></td></tr>
-        <tr><td>password: </td> <td><span th:text="${password}"> s</span></td></tr>
+        <tr><td>id: </td> <td><span th:text="${profile.id}"> s</span></td></tr>
+        <tr><td>login: </td> <td><span th:text="${profile.login}"> s</span></td></tr>
+        <tr><td>password: </td> <td><span th:text="${profile.password}"> s</span></td></tr>
 
         <tr><td>name: </td> <td>
-            <span th:text="${name_first}"> s</span>
-            <span th:text="${name_middle}"> s</span>
-            <span th:text="${name_last}"> s</span>
+            <span th:text="${profile.name_first}"> s</span>
+            <span th:text="${profile.name_middle}"> s</span>
+            <span th:text="${profile.name_last}"> s</span>
         </td></tr>
 
-        <tr><td>email: </td> <td><span th:text="${email}"> s</span></td></tr>
-        <tr><td>phone: </td> <td><span th:text="${phone}"> s</span></td></tr>
-        <tr><td>birthday: </td> <td><span th:text="${birthday}"> s</span></td></tr>
-        <tr><td>company: </td> <td>дописать</td></tr>
+        <tr><td>email: </td> <td><span th:text="${profile.email}"> s</span></td></tr>
+        <tr><td>phone: </td> <td><span th:text="${profile.phone}"> s</span></td></tr>
+        <tr><td>birthday: </td> <td><span th:text="${profile.birthday}"> s</span></td></tr>
+        <tr><td>company: </td> <td><span th:text="${profile.company}"> s</span></td></tr>
+
+        <a href="/logout">Sign Out</a>
     </table>
+
 </div>
     <table title="Ordes">
 

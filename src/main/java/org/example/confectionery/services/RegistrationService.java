@@ -15,7 +15,7 @@ public class RegistrationService {
 
     public boolean createUser(RegistrationForm registrationForm) {
         try {
-            DataBaseConnect.createUser(registrationForm);
+            dataBaseConnect.createUser(registrationForm);
         } catch (SQLException exception) {
             System.out.println(exception);
         }

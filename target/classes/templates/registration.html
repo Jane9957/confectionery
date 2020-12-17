@@ -14,17 +14,20 @@
             <tr><td>password: </td> <td><input type="password" th:field="*{passwordConfirm}"></td></tr>
 
             <tr><td>name: </td> <td>
-                <input th:field="${name_first}">
-                <input th:field="${name_middle}">
-                <input th:field="${name_last}">
+                <input type="text" th:field="*{name_first}">
+                <input type="text" th:field="*{name_middle}">
+                <input type="text" th:field="*{name_last}">
             </td></tr>
 
-            <tr><td>email: </td> <td><input type="text" th:field="*{email}"></td></tr>
+            <tr><td>email: </td> <td><input type="email" th:field="*{email}"></td></tr>
             <tr><td>phone: </td> <td><input type="text" th:field="*{phone}"></td></tr>
-            <tr><td>birthday: </td> <td><span th:text="${birthday}"> s</span></td></tr>
+            <tr><td>birthday: </td> <td><input type="date" th:field="*{birthday}"></td></tr>
             <tr><td>company: </td> <td>дописать</td></tr>
+
+            <button type="submit">Submit</button>
         </table>
     </form>
+
 </div>
 
 </body>

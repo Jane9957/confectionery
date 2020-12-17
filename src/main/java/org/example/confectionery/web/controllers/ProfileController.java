@@ -1,19 +1,24 @@
 package org.example.confectionery.web.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.method.P;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.example.confectionery.services.Customer;
+import org.example.confectionery.services.User;
 import org.example.confectionery.services.entities.Profile;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class ProfileController {
 
     @Autowired
-    private Customer service;
+    private User service;
 
-    @GetMapping("/profile")
+    /*@GetMapping("/profile")
     public String profile(Model model) {
 
         Profile profile = service.getProfile();
@@ -29,7 +34,42 @@ public class ProfileController {
         model.addAttribute("company", profile.getCompany());
 
 
-        return "profile";
+        return "/profile";
+    }*/
+
+    @GetMapping("/profile")
+    public String profile(Model model) {
+        String role = "ROLE_FACTORY";
+        for(GrantedAuthority grantedAuthority : SecurityContextHolder.getContext().getAuthentication().getAuthorities()) {
+            role = grantedAuthority.getAuthority();
+        }
+        System.out.println(role);
+        if ("ROLE_FACTORY".equals(role)) {
+            Profile profile = service.getProfile();
+            model.addAttribute("profile", profile);
+            model.addAttribute("role", role);
+            model.addAttribute("owner", true);
+            return "/profile";
+        } else {
+            Profile profile = service.getProfile();
+            model.addAttribute("profile", profile);
+            model.addAttribute("role", role);
+            model.addAttribute("owner", true);
+            return "/profile";
+        }
+    }
+
+    @GetMapping("/profile/{id}")
+    public String getClientById(Model model, @PathVariable String id) {
+        String role = "ROLE_FACTORY";
+        for(GrantedAuthority grantedAuthority : SecurityContextHolder.getContext().getAuthentication().getAuthorities()) {
+            role = grantedAuthority.getAuthority();
+        }
+        Profile profile = service.getProfileById(id);
+        model.addAttribute("profile", profile);
+        model.addAttribute("role", role);
+        model.addAttribute("owner", false);
+        return "/profile";
     }
 
 }

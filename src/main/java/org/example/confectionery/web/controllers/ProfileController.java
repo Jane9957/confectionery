@@ -1,22 +1,20 @@
 package org.example.confectionery.web.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.method.P;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.example.confectionery.services.User;
+import org.example.confectionery.services.UserService;
 import org.example.confectionery.services.entities.Profile;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class ProfileController {
 
     @Autowired
-    private User service;
+    private UserService service;
 
     /*@GetMapping("/profile")
     public String profile(Model model) {
@@ -43,7 +41,6 @@ public class ProfileController {
         for(GrantedAuthority grantedAuthority : SecurityContextHolder.getContext().getAuthentication().getAuthorities()) {
             role = grantedAuthority.getAuthority();
         }
-        System.out.println(role);
         if ("ROLE_FACTORY".equals(role)) {
             Profile profile = service.getProfile();
             model.addAttribute("profile", profile);

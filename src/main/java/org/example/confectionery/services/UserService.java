@@ -9,7 +9,7 @@ import org.example.confectionery.services.entities.Profile;
 import java.sql.SQLException;
 
 @Service
-public class User {
+public class UserService {
 
     @Autowired
     private DataBaseConnect dataBaseConnect;

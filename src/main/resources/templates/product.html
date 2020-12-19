@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+    <div>Кнопочка назад</div>
+
+    <div name="product">
+        <p>Product: <span th:text="${product.nameProduct}"></span></p>
+        <div name="raw">
+            <ul>
+                <li th:each="raw : ${product.raws}">
+                    <span th:text="${raw.nameRaw}"></span>:<span th:text="${raw.qtRaw}"></span>
+                </li>
+            </ul>
+        </div>
+        <div>картиночка справа мей би</div>
+    </div>
+</body>
+</html>

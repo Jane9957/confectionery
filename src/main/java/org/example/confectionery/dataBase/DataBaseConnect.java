@@ -36,7 +36,7 @@ public class DataBaseConnect {
         callableStatement.setString("MiddleName", form.getName_middle());
         callableStatement.setString("LastName", form.getName_last());
         callableStatement.setString("birthday", form.getBirthday());
-        callableStatement.setInt("Company", form.getCompany());
+        callableStatement.setInt("Company", form.getCompany());             //что-то сделать с этим
 
         callableStatement.execute();
         connection.close();
@@ -87,7 +87,7 @@ public class DataBaseConnect {
                 profile.setEmail(resultSet.getString("email"));
                 profile.setPhone(resultSet.getString("phone"));
                 profile.setBirthday(resultSet.getString("birthday"));
-                profile.setCompany(resultSet.getInt("id_company"));
+                profile.setCompany(resultSet.getString(8));
 
                 //добавить название компании
 
@@ -116,7 +116,7 @@ public class DataBaseConnect {
                 profile.setEmail(resultSet.getString("email"));
                 profile.setPhone(resultSet.getString("phone"));
                 profile.setBirthday(resultSet.getString("birthday"));
-                profile.setCompany(resultSet.getInt("id_company"));
+                profile.setCompany(resultSet.getString(8));
             }
         } catch (Exception e) {
             throw e;

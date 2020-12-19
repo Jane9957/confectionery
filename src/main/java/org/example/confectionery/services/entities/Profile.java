@@ -11,7 +11,7 @@ public class Profile {
     private String email;
     private String phone;
     private String birthday;
-    private int company;
+    private String  company;
 
     public int getId() {return id;}
     public void setId(int id) {this.id = id;}
@@ -40,7 +40,7 @@ public class Profile {
     public String getBirthday() {return birthday;}
     public void setBirthday(String birthday) {this.birthday = birthday;}
 
-    public int getCompany() {return company;}
-    public void setCompany(int company) {this.company = company;}
+    public String getCompany() {return company;}
+    public void setCompany(String company) {this.company = company;}
 
 }

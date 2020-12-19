@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Company</title>
+</head>
+<body>
+
+<p>Company info:</p>
+<div name="infoCompany">
+    <table>
+        <tr><td>name: </td> <td><span th:text="${company.name}"> s</span></td></tr>
+        <tr><td>address: </td> <td><span th:text="${company.address}"> s</span></td></tr>
+        <tr><td>web: </td> <td><span th:text="${company.web}"> s</span></td></tr>
+        <tr><td>phone: </td> <td><span th:text="${company.phone}"> s</span></td></tr>
+    </table>
+</div>
+
+<p>Members:</p>
+<div name="members">
+    <ul>
+        <li th:each="member : ${company.members}">
+            <span th:text="${member.firstName}"></span>:
+            <span th:text="${member.middleName}"></span>:
+            <span th:text="${member.lastName}"></span>:
+
+            <span th:text="${member.email}"></span>:
+            <span th:text="${member.phone}"></span>:
+            <span th:text="${member.birthday}"></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

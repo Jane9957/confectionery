@@ -1,5 +1,6 @@
 package org.example.confectionery.dataBase;
 
+import org.example.confectionery.services.entities.Order;
 import org.example.confectionery.web.controllers.forms.OrderForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,35 @@ public class DataBaseOrders {
 
     @Autowired
     private DataSource src;
+
+    public Order getOrderByIdSale(Integer id) throws SQLException {
+        Connection connection = src.getConnection();
+        String GET_ORDER_BY_ID_SALE = "{call getOrderByIdSale(?) }";
+        CallableStatement callableStatement = connection.prepareCall(GET_ORDER_BY_ID_SALE);
+        callableStatement.setInt("id_sale", id);
+        Order order = new Order();
+
+        try (ResultSet resultSet = callableStatement.executeQuery()){
+            if (resultSet.next()) {
+                order.setIdSale(resultSet.getInt(1));
+                order.setDate(resultSet.getString(2));
+                order.setStatus(resultSet.getString(3));
+                order.setNameProduct(resultSet.getString(4));
+                order.setPriceProduct(resultSet.getInt(5));
+                order.setWeightProduct(resultSet.getInt(6));
+                order.setFirstName(resultSet.getString(7));
+                order.setMiddleName(resultSet.getString(8));
+                order.setLastName(resultSet.getString(9));
+                order.setEmail(resultSet.getString(10));
+                order.setPhone(resultSet.getString(11));
+                order.setCompany(resultSet.getString(12));
+            }
+        }
+        callableStatement.execute();
+        connection.close();
+
+        return order;
+    }
 
     public void cancelOrder(Integer id) throws SQLException {
         Connection connection = src.getConnection();

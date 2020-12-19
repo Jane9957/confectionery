@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Order</title>
+</head>
+<body>
+
+    <div name="listOfProducts">
+        <table>
+
+
+            <tr th:each="product : ${products}">
+                <form th:action="@{/createOrder/} + ${product.IdProd}" th:object="${orderForm}" method="post">
+
+                    <td><span th:text="${product.IdProd}">1</span></td><br>
+                    <td><span th:text="${product.name}">name</span></td><br>
+                    <td><span th:text="${product.price}">price</span></td><br>
+                    <td><span th:text="${product.weight}">weight</span></td><br>
+
+                <td><input type="number" th:field="*{qt}"></td>
+                <td><button type="submit">to order</button></td>
+                </form>
+            </tr>
+
+        </table>
+
+    </div>
+
+</body>
+</html>

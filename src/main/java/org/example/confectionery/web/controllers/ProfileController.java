@@ -6,7 +6,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.example.confectionery.services.UserService;
+import org.example.confectionery.services.ProfileService;
 import org.example.confectionery.services.entities.Profile;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class ProfileController {
 
     @Autowired
-    private UserService service;
+    private ProfileService service;
 
     /*@GetMapping("/profile")
     public String profile(Model model) {

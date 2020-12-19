@@ -1,5 +1,7 @@
 package org.example.confectionery.services.entities;
 
+import java.util.List;
+
 public class Profile {
 
     private int id;
@@ -12,6 +14,8 @@ public class Profile {
     private String phone;
     private String birthday;
     private String  company;
+
+    private List<Order> orders;
 
     public int getId() {return id;}
     public void setId(int id) {this.id = id;}
@@ -43,4 +47,11 @@ public class Profile {
     public String getCompany() {return company;}
     public void setCompany(String company) {this.company = company;}
 
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
 }

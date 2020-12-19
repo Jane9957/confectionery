@@ -6,13 +6,9 @@
 </head>
 <body>
 
-<div>information
-
+<div>
+    <p>Information:</p>
     <table>
-        <tr><td>id: </td> <td><span th:text="${profile.id}"> s</span></td></tr>
-        <tr><td>login: </td> <td><span th:text="${profile.login}"> s</span></td></tr>
-        <tr><td>password: </td> <td><span th:text="${profile.password}"> s</span></td></tr>
-
         <tr><td>name: </td> <td>
             <span th:text="${profile.name_first}"> s</span>
             <span th:text="${profile.name_middle}"> s</span>
@@ -24,20 +20,28 @@
         <tr><td>birthday: </td> <td><span th:text="${profile.birthday}"> s</span></td></tr>
         <tr><td>company: </td> <td><span th:text="${profile.company}"> s</span></td></tr>
 
-        <a href="/logout">Sign Out</a>
     </table>
 
+    <p>Orders:</p>
 </div>
-    <table title="Ordes">
-
-    </table>
+    <div title="Ordes">
+        <ul>
+            <li th:each="order : ${profile.orders}">
+                <a th:href="@{/order/} + ${order.idSale}" th:text="${order.idSale}"></a>:
+                <span th:text="${order.date}"></span>:
+                <span th:text="${order.status}"></span>:
+                <span th:text="${order.nameProduct}"></span>:
+                <span th:text="${order.weightProduct}"></span>
+            </li>
+        </ul>
+    </div>
 <div>
 
 </div>
 
 <div>buttons
-    <p><input type="button" value="Перейти к странице заказов"></p>
-    <p><input type="button" value="Выход"></p>
+    <p><a th:href="@{/createOrder}">CREATE ORDER</a></p>
+    <p><a href="/logout">SIGN OUT</a></p>
 </div>
 
 </body>

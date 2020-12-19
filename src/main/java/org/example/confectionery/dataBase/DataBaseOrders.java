@@ -10,14 +10,40 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
 
 @Service
 public class DataBaseOrders {
 
     @Autowired
     private DataSource src;
+
+    public List<OrderForm> getProduct() throws SQLException {
+        List<OrderForm> list = new ArrayList<>();
+        Connection connection = src.getConnection();
+
+        String GET_PRODUCT_FOR_ORDER = "{call getProduct() }";
+
+        CallableStatement callableStatement = connection.prepareCall(GET_PRODUCT_FOR_ORDER);
+
+        try (ResultSet resultSet = callableStatement.executeQuery()) {
+            while (resultSet.next()) {
+                OrderForm orderForm = new OrderForm();
+                orderForm.setIdProd(resultSet.getInt(1));
+                orderForm.setName(resultSet.getString(2));
+                orderForm.setPrice(resultSet.getInt(3));
+                orderForm.setWeight(resultSet.getInt(4));
+                list.add(orderForm);
+            }
+        }
+        callableStatement.execute();
+        connection.close();
+
+        return list;
+    }
 
     public Order getOrderByIdSale(Integer id) throws SQLException {
         Connection connection = src.getConnection();
@@ -34,12 +60,13 @@ public class DataBaseOrders {
                 order.setNameProduct(resultSet.getString(4));
                 order.setPriceProduct(resultSet.getInt(5));
                 order.setWeightProduct(resultSet.getInt(6));
-                order.setFirstName(resultSet.getString(7));
-                order.setMiddleName(resultSet.getString(8));
-                order.setLastName(resultSet.getString(9));
-                order.setEmail(resultSet.getString(10));
-                order.setPhone(resultSet.getString(11));
-                order.setCompany(resultSet.getString(12));
+                order.setQtProduct(resultSet.getInt(7));
+                order.setFirstName(resultSet.getString(8));
+                order.setMiddleName(resultSet.getString(9));
+                order.setLastName(resultSet.getString(10));
+                order.setEmail(resultSet.getString(11));
+                order.setPhone(resultSet.getString(12));
+                order.setCompany(resultSet.getString(13));
             }
         }
         callableStatement.execute();
@@ -59,10 +86,11 @@ public class DataBaseOrders {
 
     public void createOrder(OrderForm orderForm, String username) throws SQLException {
         Connection connection = src.getConnection();
-        String CREATE_ORDER_BY_USER = "{call createOrderByUser(?, ?) }";
+        String CREATE_ORDER_BY_USER = "{call createOrderByUser(?, ?, ?) }";
         CallableStatement callableStatement = connection.prepareCall(CREATE_ORDER_BY_USER);
         callableStatement.setString("Login", username);
         callableStatement.setInt("id_prod", orderForm.getIdProd());
+        callableStatement.setInt("qt_prod", orderForm.getQt());
 
         callableStatement.execute();
         connection.close();

@@ -1,11 +1,9 @@
 package org.example.confectionery.dataBase;
 
-import org.example.confectionery.DBWorker;
-import org.example.confectionery.services.entities.CustomOrder;
+import org.example.confectionery.services.entities.*;
 import org.example.confectionery.web.controllers.forms.RegistrationForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.example.confectionery.services.entities.Profile;
 
 import javax.sql.DataSource;
 import java.sql.CallableStatement;
@@ -13,7 +11,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class DataBaseConnect {
@@ -36,10 +36,28 @@ public class DataBaseConnect {
         callableStatement.setString("MiddleName", form.getName_middle());
         callableStatement.setString("LastName", form.getName_last());
         callableStatement.setString("birthday", form.getBirthday());
-        callableStatement.setInt("Company", form.getCompany());             //что-то сделать с этим
+        callableStatement.setInt("Company", form.getCompany());
 
         callableStatement.execute();
         connection.close();
+    }
+
+    public Map<Integer, String> getCompanies() throws SQLException {
+        Map<Integer, String> map = new HashMap<>();
+        Connection connection = src.getConnection();
+
+        String GET_COMPANIES = "{call getCompanies() }";
+
+        CallableStatement callableStatement = connection.prepareCall(GET_COMPANIES);
+        try (ResultSet resultSet = callableStatement.executeQuery()) {
+            while (resultSet.next()) {
+                map.put(resultSet.getInt(1), resultSet.getString(2));
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+
+        return map;
     }
 
     private List<CustomOrder> getOrdersByClientId(Integer id) throws SQLException {
@@ -117,6 +135,9 @@ public class DataBaseConnect {
                 profile.setPhone(resultSet.getString("phone"));
                 profile.setBirthday(resultSet.getString("birthday"));
                 profile.setCompany(resultSet.getString(8));
+
+                profile.setOrders(getOrderByIdUser(profile.getId()));
+
             }
         } catch (Exception e) {
             throw e;
@@ -125,4 +146,33 @@ public class DataBaseConnect {
         return profile;
     }
 
+    public List<Order> getOrderByIdUser(Integer id) throws SQLException {
+
+        List<Order> result = new ArrayList<>();
+        Connection connection = src.getConnection();
+
+        String GET_ORDERS_BY_ID_USER = "{ call getOrderByIdUser(?) }"; //to create
+
+        CallableStatement callableStatement = connection.prepareCall(GET_ORDERS_BY_ID_USER);
+        callableStatement.setInt(1, id);
+
+        try (ResultSet resultSet = callableStatement.executeQuery()) {
+            while (resultSet.next()) {
+                Order order = new Order();
+                order.setIdSale(resultSet.getInt(1));
+                order.setDate(resultSet.getString(2));
+                order.setStatus(resultSet.getString(3));
+                order.setNameProduct(resultSet.getString(4));
+                order.setPriceProduct(resultSet.getInt(5));
+                order.setWeightProduct(resultSet.getInt(6));
+
+                result.add(order);
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+        connection.close();
+
+        return result;
+    }
 }

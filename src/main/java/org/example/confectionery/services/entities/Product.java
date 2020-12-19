@@ -6,6 +6,7 @@ public class Product {
 
     String nameProduct;
     private List<Raw> raws;
+    int productId;
 
     public List<Raw> getRaws() {
         return raws;
@@ -21,5 +22,13 @@ public class Product {
 
     public void setNameProduct(String nameProduct) {
         this.nameProduct = nameProduct;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 }

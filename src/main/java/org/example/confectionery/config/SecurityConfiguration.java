@@ -30,7 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                    .antMatchers("/registration", "/login", "/js/**", "/css/**", "/img/**").permitAll()
+                    .antMatchers("/registration", "/login", "/", "/js/**", "/css/**", "/img/**").permitAll()
                     .anyRequest()
                     .authenticated()
                 .and()
@@ -44,7 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                     .logout()
                     .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                    .logoutSuccessUrl("/").deleteCookies("JSESSIONID").invalidateHttpSession(true);
+                    .logoutSuccessUrl("/login").deleteCookies("JSESSIONID").invalidateHttpSession(true);
     }
 
     @Override

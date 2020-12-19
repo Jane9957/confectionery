@@ -1,6 +1,7 @@
 package org.example.confectionery.services;
 
 import org.example.confectionery.dataBase.DataBaseConnect;
+import org.example.confectionery.services.entities.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -9,7 +10,7 @@ import org.example.confectionery.services.entities.Profile;
 import java.sql.SQLException;
 
 @Service
-public class UserService {
+public class ProfileService {
 
     @Autowired
     private DataBaseConnect dataBaseConnect;
@@ -40,4 +41,5 @@ public class UserService {
         }
         return profile;
     }
+
 }

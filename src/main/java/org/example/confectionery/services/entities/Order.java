@@ -8,6 +8,7 @@ public class Order {
     String nameProduct;
     int priceProduct;
     int weightProduct;
+    int qtProduct;
 
     String firstName;
     String middleName;
@@ -110,5 +111,13 @@ public class Order {
 
     public void setCompany(String company) {
         this.company = company;
+    }
+
+    public int getQtProduct() {
+        return qtProduct;
+    }
+
+    public void setQtProduct(int qtProduct) {
+        this.qtProduct = qtProduct;
     }
 }

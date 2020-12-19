@@ -22,9 +22,19 @@
             <tr><td>email: </td> <td><input type="email" th:field="*{email}"></td></tr>
             <tr><td>phone: </td> <td><input type="text" th:field="*{phone}"></td></tr>
             <tr><td>birthday: </td> <td><input type="date" th:field="*{birthday}"></td></tr>
-            <tr><td>company: </td> <td>дописать</td></tr>
 
-            <button type="submit">Submit</button>
+            <tr>
+                <td>company: </td>
+                <td>
+                    <select th:field="*{company}">
+                        <option th:each="company : ${companies}" th:value="${company.key}" th:text="${company.value}">
+                            select
+                        </option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr><td><button type="submit">Submit</button></td></tr>
         </table>
     </form>
 

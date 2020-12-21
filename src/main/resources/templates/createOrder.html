@@ -13,10 +13,10 @@
             <tr th:each="product : ${products}">
                 <form th:action="@{/createOrder/} + ${product.IdProd}" th:object="${orderForm}" method="post">
 
-                    <td><span th:text="${product.IdProd}">1</span></td><br>
-                    <td><span th:text="${product.name}">name</span></td><br>
-                    <td><span th:text="${product.price}">price</span></td><br>
-                    <td><span th:text="${product.weight}">weight</span></td><br>
+                    <td><span th:text="${product.IdProd}">1</span></td>
+                    <td><span th:text="${product.name}">name</span></td>
+                    <td><span th:text="${product.price}">price</span></td>
+                    <td><span th:text="${product.weight}">weight</span></td>
 
                 <td><input type="number" th:field="*{qt}"></td>
                 <td><button type="submit">to order</button></td>

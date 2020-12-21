@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Factory Orders</title>
+</head>
+<body>
+
+<div title="Ordes">
+    <ul>
+        <li th:each="order : ${orders}">
+            <span th:text="${order.idRaw}"></span>:
+
+            <ul><li th:each="raw : ${order.raws}">
+                <span th:text="${raw.nameRaw}"></span>:
+                <span th:text="${raw.qtRaw}"></span>:
+                <span th:text="${raw.PriceRaw}"></span>
+            </li></ul>
+            <!--<span th:text="${order.nameRaw}"></span>:
+            <span th:text="${order.qtRaw}"></span>:
+            <span th:text="${order.PriceRaw}"></span>-->
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

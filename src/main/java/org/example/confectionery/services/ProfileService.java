@@ -33,7 +33,7 @@ public class ProfileService {
     }
 
     public Profile getProfileById(String id) {
-        Profile profile = new Profile();
+        Profile profile = null;
         try {
             profile = dataBaseConnect.getProfileById(Integer.valueOf(id));
         } catch (SQLException exception) {

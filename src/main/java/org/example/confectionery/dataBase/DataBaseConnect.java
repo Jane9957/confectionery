@@ -74,6 +74,7 @@ public class DataBaseConnect {
                 customOrder.setPrice(resultSet.getInt(3));
                 customOrder.setDate(resultSet.getString(4));
                 customOrder.setStatus(resultSet.getString(5));
+                customOrder.setQtProduct(resultSet.getInt(6));
                 if ("Entered".equals(customOrder.getStatus())) {
                     customOrder.setCancel(true);
                 } else {
@@ -94,10 +95,11 @@ public class DataBaseConnect {
         String GET_CLIENT_PROFILE = "{ call getProfileById(?) }";
         CallableStatement callableStatement = connection.prepareCall(GET_CLIENT_PROFILE);
         callableStatement.setInt("id", id);
-        Profile profile = new Profile();
+        Profile profile = null;
 
         try (ResultSet resultSet = callableStatement.executeQuery()) {
             if(resultSet.next()) {
+                profile = new Profile();
                 profile.setLogin(resultSet.getString("login"));
                 profile.setName_first(resultSet.getString("first_name"));
                 profile.setName_middle(resultSet.getString("middle_name"));
@@ -165,6 +167,8 @@ public class DataBaseConnect {
                 order.setNameProduct(resultSet.getString(4));
                 order.setPriceProduct(resultSet.getInt(5));
                 order.setWeightProduct(resultSet.getInt(6));
+                order.setQtProduct(resultSet.getInt(7));
+                order.setPriceTotal(resultSet.getInt(8));
 
                 result.add(order);
             }
@@ -173,6 +177,34 @@ public class DataBaseConnect {
         }
         connection.close();
 
+        return result;
+    }
+
+    public List<Order> showOrders() throws SQLException {
+
+        List<Order> result = new ArrayList<>();
+        Connection connection = src.getConnection();
+
+        String SHOW_ORDERS = "{ call showOrders() }";
+
+        CallableStatement callableStatement = connection.prepareCall(SHOW_ORDERS);
+        try(ResultSet resultSet = callableStatement.executeQuery()) {
+            while (resultSet.next()) {
+                Order order = new Order();
+                order.setIdSale(resultSet.getInt(1));
+                order.setDate(resultSet.getString(2));
+                order.setStatus(resultSet.getString(3));
+                order.setNameProduct(resultSet.getString(4));
+                order.setPriceProduct(resultSet.getInt(5));
+                order.setWeightProduct(resultSet.getInt(6));
+                order.setQtProduct(resultSet.getInt(7));
+                order.setPriceTotal(resultSet.getInt(8));
+
+                result.add(order);
+            }
+        } catch (Exception e) {
+            throw e;
+        }
         return result;
     }
 }

@@ -16,25 +16,6 @@ public class ProfileController {
     @Autowired
     private ProfileService service;
 
-    /*@GetMapping("/profile")
-    public String profile(Model model) {
-
-        Profile profile = service.getProfile();
-        model.addAttribute("id", profile.getId());
-        model.addAttribute("login", profile.getLogin());
-        model.addAttribute("password", profile.getPassword());
-        model.addAttribute("name_first", profile.getName_first());
-        model.addAttribute("name_middle", profile.getName_middle());
-        model.addAttribute("name_last", profile.getName_last());
-        model.addAttribute("email", profile.getEmail());
-        model.addAttribute("phone", profile.getPhone());
-        model.addAttribute("birthday", profile.getBirthday());
-        model.addAttribute("company", profile.getCompany());
-
-
-        return "/profile";
-    }*/
-
     @GetMapping("/profile")
     public String profile(Model model) {
         String role = "ROLE_FACTORY";
@@ -58,15 +39,19 @@ public class ProfileController {
 
     @GetMapping("/profile/{id}")
     public String getClientById(Model model, @PathVariable String id) {
+        Profile profile = null;
         String role = "ROLE_FACTORY";
         for(GrantedAuthority grantedAuthority : SecurityContextHolder.getContext().getAuthentication().getAuthorities()) {
             role = grantedAuthority.getAuthority();
         }
-        Profile profile = service.getProfileById(id);
-        model.addAttribute("profile", profile);
-        model.addAttribute("role", role);
-        model.addAttribute("owner", false);
-        return "/profile";
+        profile = service.getProfileById(id);
+        if(profile != null) {
+            model.addAttribute("profile", profile);
+            model.addAttribute("role", role);
+            model.addAttribute("owner", false);
+            return "/profile";
+        } else {
+            return "redirect:/profile";
+        }
     }
-
 }

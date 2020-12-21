@@ -31,7 +31,10 @@
                 <span th:text="${order.date}"></span>:
                 <span th:text="${order.status}"></span>:
                 <span th:text="${order.nameProduct}"></span>:
-                <span th:text="${order.weightProduct}"></span>
+                <span th:text="${order.weightProduct}"></span>:
+                <span th:text="${order.qtProduct}"></span>:
+                <span th:text="${order.priceTotal}"></span>
+                <a th:if="${order.status} != 'Accept'" th:href="@{/order/} + ${order.idSale} + @{/delete}">DELETE</a>
             </li>
         </ul>
     </div>
@@ -39,8 +42,10 @@
 
 </div>
 
-<div>buttons
-    <p><a th:href="@{/createOrder}">CREATE ORDER</a></p>
+<div name = buttoms>
+    <p><a th:if="${role} == 'ROLE_CUSTOMER'" th:href="@{/createOrder}">CREATE ORDER</a></p>
+    <p><a th:if="${role} == 'ROLE_FACTORY' and ${owner} == true" th:href="@{/showOrders}">SHOW ORDERS</a></p>
+    <p><a th:if="${role} == 'ROLE_FACTORY' and ${owner} == true" th:href="@{/factoryOrders}">FACTORY ORDERS</a></p>
     <p><a href="/logout">SIGN OUT</a></p>
 </div>
 

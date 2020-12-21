@@ -1,5 +1,7 @@
 package org.example.confectionery.services;
 
+import org.example.confectionery.dataBase.DataBaseConnect;
+import org.example.confectionery.dataBase.DataBaseLoger;
 import org.example.confectionery.dataBase.DataBaseOrders;
 import org.example.confectionery.services.entities.Order;
 import org.example.confectionery.web.controllers.forms.OrderForm;
@@ -17,6 +19,12 @@ public class OrderService {
     @Autowired
     private DataBaseOrders dataBaseOrders;
 
+    @Autowired
+    private DataBaseConnect dataBaseConnect;
+
+    @Autowired
+    DataBaseLoger dataBaseLoger;
+
     public Order getOrderByIdSale(String id) {
         Order order = new Order();
         try {
@@ -32,12 +40,31 @@ public class OrderService {
                 .getContext()
                 .getAuthentication()
                 .getName();
-        //orderForm.setDate(date);
         try {
             dataBaseOrders.createOrder(orderForm, username);
+            dataBaseLoger.newLogertext("New order have been added - " + orderForm.getName() + "  At  " + dataBaseLoger.GetDateTime());
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void deleteOrder(String id) throws SQLException {
+        dataBaseOrders.deleteOrder(Integer.valueOf(id));
+        dataBaseLoger.newLogertext("Order " + Integer.valueOf(id) + "  deleted At " + dataBaseLoger.GetDateTime());
+    }
+
+    public boolean checkOwner(String id){
+        String username = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getName();
+        boolean name = false;
+        try {
+            name = dataBaseOrders.checkOwner(username, Integer.valueOf(id));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return name;
     }
 
     public List<OrderForm> getProducts() {
@@ -49,6 +76,29 @@ public class OrderService {
         }
 
         return orderForms;
+    }
+
+    public List<Order> showOrders() throws SQLException {
+        List<Order> order = new ArrayList<>();
+        order = dataBaseConnect.showOrders();
+
+        return order;
+    }
+
+    public void acceptOrder(String id) throws SQLException {
+        String username = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getName();
+        dataBaseOrders.acceptOrder(Integer.valueOf(id), username);
+        dataBaseLoger.newLogertext("Order "+ Integer.valueOf(id) + " was accept by " + username + " At " + dataBaseLoger.GetDateTime());
+    }
+
+    public List<Order> getOrdersOfFactory() throws SQLException {
+        List<Order> order = new ArrayList<>();
+        order = dataBaseOrders.getOrdersOfFactory();
+
+        return order;
     }
 
 }

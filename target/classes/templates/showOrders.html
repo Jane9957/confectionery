@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Accept Orders</title>
 </head>
 <body>
+
+<div name="listOfProducts">
+    <table>
+
+
+        <tr th:if="${order.status} != 'Accept'" th:each="order : ${orders}">
+            <form th:action="@{/showOrders/} + ${order.IdSale}" th:object="${order}" method="post">
+
+                <td><a th:href="@{/order/} + ${order.idSale}" th:text="${order.idSale}"></a></td>
+                <td><span th:text="${order.date}"></span></td>
+                <td><span th:text="${order.status}"></span></td>
+                <td><span th:text="${order.nameProduct}"></span></td>
+                <td><span th:text="${order.weightProduct}"></span></td>
+                <td><span th:text="${order.qtProduct}"></span></td>
+                <td><span th:text="${order.priceTotal}"></span></td>
+
+                <td th:if="${order.status} != 'Accept'"><button type="submit">accept order</button></td>
+            </form>
+        </tr>
+
+    </table>
+
+</div>
 
 </body>
 </html>

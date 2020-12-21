@@ -1,14 +1,18 @@
 package org.example.confectionery.services.entities;
 
+import java.util.List;
+
 public class Order {
 
     int idSale;
     String date;
     String status;
+    int idProd;
     String nameProduct;
     int priceProduct;
     int weightProduct;
     int qtProduct;
+    int priceTotal;
 
     String firstName;
     String middleName;
@@ -16,6 +20,9 @@ public class Order {
     String email;
     String phone;
     String company;
+
+    int idRaw;
+    List<Raw> raws;
 
     public int getIdSale() {
         return idSale;
@@ -119,5 +126,46 @@ public class Order {
 
     public void setQtProduct(int qtProduct) {
         this.qtProduct = qtProduct;
+    }
+
+    public int getPriceTotal() {
+        return priceTotal;
+    }
+
+    public void setPriceTotal(int priceTotal) {
+        this.priceTotal = priceTotal;
+    }
+
+    public int getIdProd() {
+        return idProd;
+    }
+
+    public void setIdProd(int idProd) {
+        this.idProd = idProd;
+    }
+
+
+    public List<Raw> getOrders() {
+        return raws;
+    }
+
+    public void setOrders(List<Raw> raws) {
+        this.raws = raws;
+    }
+
+    public int getIdRaw() {
+        return idRaw;
+    }
+
+    public void setIdRaw(int idRaw) {
+        this.idRaw = idRaw;
+    }
+
+    public List<Raw> getRaws() {
+        return raws;
+    }
+
+    public void setRaws(List<Raw> raws) {
+        this.raws = raws;
     }
 }

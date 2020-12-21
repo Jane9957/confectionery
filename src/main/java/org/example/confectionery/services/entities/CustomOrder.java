@@ -7,6 +7,7 @@ public class CustomOrder {
     private String status;
     private int price;
     private String name;
+    private int qtProduct;
 
     private boolean cancel;
 
@@ -56,5 +57,13 @@ public class CustomOrder {
 
     public void setCancel(boolean cancel) {
         this.cancel = cancel;
+    }
+
+    public int getQtProduct() {
+        return qtProduct;
+    }
+
+    public void setQtProduct(int qtProduct) {
+        this.qtProduct = qtProduct;
     }
 }

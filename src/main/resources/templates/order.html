@@ -28,10 +28,13 @@
         <tr><td>data: </td> <td><span th:text="${order.date}"> s</span></td></tr>
         <tr><td>status: </td> <td><span th:text="${order.status}"> s</span></td></tr>
 
-        <tr><td>name_prod: </td> <td><span th:text="${order.nameProduct}"> s</span></td></tr>
+
+        <tr><td>name_prod: </td> <td><a th:href="@{/product/} + ${order.idProd}" th:text="${order.nameProduct}"></a></td></tr>
+
         <tr><td>price: </td> <td><span th:text="${order.priceProduct}"> s</span></td></tr>
         <tr><td>weight: </td> <td><span th:text="${order.weightProduct}"> s</span></td></tr>
         <tr><td>qt: </td> <td><span th:text="${order.QtProduct}"> s</span></td></tr>
+        <tr><td>total price: </td> <td><span th:text="${order.priceTotal}"> s</span></td></tr>
     </table>
 </div>
 

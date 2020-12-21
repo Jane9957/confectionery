@@ -7,6 +7,7 @@ public class OrderForm {
     int price;
     int weight;
     int qt;
+    int priceTotal;
 
     public int getIdProd() {
         return IdProd;
@@ -46,5 +47,13 @@ public class OrderForm {
 
     public void setQt(int qt) {
         this.qt = qt;
+    }
+
+    public int getPriceTotal() {
+        return priceTotal;
+    }
+
+    public void setPriceTotal(int priceTotal) {
+        this.priceTotal = priceTotal;
     }
 }

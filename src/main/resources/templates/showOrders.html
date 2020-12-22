@@ -10,7 +10,7 @@
 <div class="reg">Orders</div>
 <div class="qwerty" name="listOfProducts">
     <table>
-        <tr th:if="${order.status} != 'Accept'" th:each="order : ${orders}">
+        <tr th:each="order : ${orders}">
             <form th:action="@{/showOrders/} + ${order.IdSale}" th:object="${order}" method="post">
 
                 <!--<td class = "right"><a th:href="@{/order/} + ${order.idSale}" th:text="${order.idSale}"></a></td>-->
@@ -22,7 +22,7 @@
                 <td><span th:text="${order.qtProduct}"></span></td>
                 <td><span th:text="${order.priceTotal}"></span></td>
 
-                <td th:if="${order.status} != 'Accept'"><button type="submit">accept order</button></td>
+                <td th:if="${order.status} != 'Done'"><button type="submit">accept order</button></td>
             </form>
         </tr>
 

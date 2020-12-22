@@ -32,12 +32,12 @@
                 <li th:each="order : ${profile.orders}">
                     <a th:href="@{/order/} + ${order.idSale}" th:text="${order.idSale}"></a>:
                     <span th:text="${order.date}"></span>:
-                    <span th:text="${order.status}"></span>:
+                    <span style="color: #527bff;" th:text="${order.status}"></span>:
                     <span th:text="${order.nameProduct}"></span>:
                     <span th:text="${order.weightProduct}"></span>:
                     <span th:text="${order.qtProduct}"></span>:
                     <span th:text="${order.priceTotal}"></span>
-                    <a th:if="${order.status} != 'Accept'" th:href="@{/order/} + ${order.idSale} + @{/delete}">DELETE</a>
+                    <a th:if="${order.status} != 'Accept' and ${order.status} != 'Done'" th:href="@{/order/} + ${order.idSale} + @{/delete}">DELETE</a>
                 </li>
             </ul>
         </div>

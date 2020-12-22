@@ -37,6 +37,11 @@ public class OrderController {
             model.addAttribute("order", order);
             return "/order";
         } else {
+            /*if (role == "ROLE_FACTORY") {
+                Order order = orderService.getOrderByIdSale(id);
+                model.addAttribute("order", order);
+                return "/order";
+            }*/
             return "redirect:/profile";
         }
 

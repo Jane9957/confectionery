@@ -26,7 +26,7 @@ public class CreateUserValidation {
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
-        if (!name) {
+        if (name) {
             return false;
         }
         if (!form.getPassword().equals(form.getPasswordConfirm())) {

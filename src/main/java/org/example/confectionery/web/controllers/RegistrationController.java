@@ -36,11 +36,11 @@ public class RegistrationController {
 
     @PostMapping("/registration")
     public String registrationPost(Model model, @ModelAttribute("registrationForm") RegistrationForm registrationForm) {
-        if(createUserValidation.checkRegistrationForm(registrationForm)) {
+        if(!createUserValidation.checkRegistrationForm(registrationForm)) {
             model.addAttribute("error", true);
             model.addAttribute("companies", companyService.getCompanies());
             model.addAttribute("registrationForm", registrationForm);
-            return "redirect:/registration";
+            return "registration";
         } else {
             registrationService.createUser(registrationForm);
             return "redirect:/login";

@@ -26,3 +26,11 @@ img {
     min-width: 50%;
     min-height: 50%;
 }
+
+.qwerty {
+    color: blue;
+}
+
+td{
+    padding-right: 10pt;
+}

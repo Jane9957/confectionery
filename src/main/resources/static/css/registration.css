@@ -1,8 +1,21 @@
 .reg{
-    background-color: #1ddede;
+    background-color: #527bff;
     margin: revert;
     padding: 10pt;
+    padding-left: 20pt;
     color: white;
     text-transform: uppercase;
     font-size: x-large;
+}
+
+.right{
+    text-align: right;
+}
+
+.qwerty{
+    margin: 14pt;
+}
+
+td{
+    padding-right: 10pt;
 }

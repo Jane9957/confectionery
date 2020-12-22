@@ -7,27 +7,30 @@
     <link rel="stylesheet" th:href="@{/css/registration.css}">
 </head>
 <body>
-
-<div>
-    <div class="reg">Registration</div>
+<div class="reg">Registration</div>
+<div class="qwerty">
     <form th:action="@{/registration}" th:object="${registrationForm}" method="post">
-        <table>
-            <tr><td>login: </td> <td><input type="text" th:field="*{login}"></td></tr>
-            <tr><td>password: </td> <td><input type="password" th:field="*{password}"></td></tr>
-            <tr><td>password: </td> <td><input type="password" th:field="*{passwordConfirm}"></td></tr>
+        <table style="color: #527bff;">
+            <tr><td class = "right">login: </td> <td><input type="text" th:field="*{login}"></td></tr>
+            <tr><td class = "right">password: </td> <td><input type="password" th:field="*{password}"></td></tr>
+            <tr><td class = "right">password: </td> <td><input type="password" th:field="*{passwordConfirm}"></td></tr>
 
-            <tr><td>name: </td> <td>
+            <!--<tr><td>name: </td> <td>
                 <input type="text" th:field="*{name_first}">
                 <input type="text" th:field="*{name_middle}">
                 <input type="text" th:field="*{name_last}">
-            </td></tr>
+            </td></tr>-->
 
-            <tr><td>email: </td> <td><input type="email" th:field="*{email}"></td></tr>
-            <tr><td>phone: </td> <td><input type="text" th:field="*{phone}"></td></tr>
-            <tr><td>birthday: </td> <td><input type="date" th:field="*{birthday}"></td></tr>
+            <tr><td class = "right">first_name: </td> <td><input type="text" th:field="*{name_first}"></td></tr>
+            <tr><td class = "right">middle_name: </td> <td><input type="text" th:field="*{name_middle}"></td></tr>
+            <tr><td class = "right">last_name: </td> <td><input type="text" th:field="*{name_last}"></td></tr>
+
+            <tr><td class = "right">email: </td> <td><input type="email" th:field="*{email}"></td></tr>
+            <tr><td class = "right">phone: </td> <td><input type="text" th:field="*{phone}"></td></tr>
+            <tr><td class = "right">birthday: </td> <td><input type="date" th:field="*{birthday}"></td></tr>
 
             <tr>
-                <td>company: </td>
+                <td class = "right">company: </td>
                 <td>
                     <select th:field="*{company}">
                         <option th:each="company : ${companies}" th:value="${company.key}" th:text="${company.value}">
@@ -41,6 +44,9 @@
         </table>
     </form>
 
+    <div th:if="${error} == true">
+        Please check parameters!
+    </div>
 </div>
 
 </body>

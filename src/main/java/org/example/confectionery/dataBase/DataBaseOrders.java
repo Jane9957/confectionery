@@ -75,9 +75,10 @@ public class DataBaseOrders {
         try (ResultSet resultSet = callableStatement.executeQuery()) {
             while (resultSet.next()) {
                 Raw raw = new Raw();
-                raw.setNameRaw(resultSet.getString(1));
-                raw.setQtRaw(resultSet.getInt(2));
-                raw.setPriceRaw(resultSet.getInt(3));
+                raw.setIdRaw(resultSet.getInt(1));
+                raw.setNameRaw(resultSet.getString(2));
+                raw.setQtRaw(resultSet.getInt(3));
+                raw.setPriceRaw(resultSet.getInt(4));
                 result.add(raw);
             }
         } catch (Exception e) {
